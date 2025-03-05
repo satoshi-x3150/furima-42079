@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram id="Furima_ER" name="Page-1">
+    <mxGraphModel dx="617" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- users table -->
+        <mxCell id="users" value="users" style="shape=table;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="180" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="users_columns" value="ID (PK)&#xa;nickname&#xa;email (unique)&#xa;password&#xa;first_name&#xa;last_name&#xa;birth_date" style="text" vertex="1" parent="users">
+          <mxGeometry x="10" y="40" width="160" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- items table -->
+        <mxCell id="items" value="items" style="shape=table;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="240" y="20" width="180" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="items_columns" value="ID (PK)&#xa;name&#xa;description&#xa;price&#xa;category_id&#xa;condition_id&#xa;shipping_fee_id&#xa;prefecture_id&#xa;shipping_time_id&#xa;user_id (FK)" style="text" vertex="1" parent="items">
+          <mxGeometry x="10" y="40" width="160" height="210" as="geometry" />
+        </mxCell>
+
+        <!-- purchase_records table -->
+        <mxCell id="purchase_records" value="purchase_records" style="shape=table;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="460" y="20" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="purchase_records_columns" value="ID (PK)&#xa;user_id (FK)&#xa;item_id (FK)" style="text" vertex="1" parent="purchase_records">
+          <mxGeometry x="10" y="40" width="160" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- shipping_addresses table -->
+        <mxCell id="shipping_addresses" value="shipping_addresses" style="shape=table;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="680" y="20" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="shipping_addresses_columns" value="ID (PK)&#xa;postal_code&#xa;city&#xa;address&#xa;phone_number&#xa;purchase_record_id (FK)" style="text" vertex="1" parent="shipping_addresses">
+          <mxGeometry x="10" y="40" width="180" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Relations -->
+        <mxCell id="rel_users_items" edge="1" parent="1" source="users" target="items" style="edgeStyle=elbowEdgeStyle;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="rel_users_purchase_records" edge="1" parent="1" source="users" target="purchase_records" style="edgeStyle=elbowEdgeStyle;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="rel_items_purchase_records" edge="1" parent="1" source="items" target="purchase_records" style="edgeStyle=elbowEdgeStyle;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="rel_purchase_records_shipping_addresses" edge="1" parent="1" source="purchase_records" target="shipping_addresses" style="edgeStyle=elbowEdgeStyle;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
