@@ -58,7 +58,7 @@
 | purchase_record    | integer    | null: false                    |
 | city               | string     | null: false                    |
 | address            | string     | null: false                    |
-| building           | string     | null: false                    |
+| building           | string     |                                |
 | phone_number       | string     | null: false                    |
 | purchase_record    | references | null: false                    |
 
