@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="0zyiNsfSegdo7sNZ2nji" name="Page-1">
-        <mxGraphModel dx="290" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="248" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -28,7 +28,7 @@
                 <mxCell id="9" value="shipping_addresses" style="shape=table;startSize=30;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="400" y="320" width="200" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="ID (PK)&#xa;postal_code&#xa;prefecture_idcity&#xa;address&#xa;building&#xa;phone_number&#xa;purchase_record_id (FK)" style="text;rounded=1;" vertex="1" parent="9">
+                <mxCell id="10" value="ID (PK)&#xa;postal_code&#xa;prefecture&#xa;city&#xa;address&#xa;building&#xa;phone_number&#xa;purchase_record_id (FK)" style="text;rounded=1;" vertex="1" parent="9">
                     <mxGeometry x="10" y="40" width="180" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" style="edgeStyle=elbowEdgeStyle;endArrow=ERoneToMany;endFill=0;targetPerimeterSpacing=5;" edge="1" parent="1">
