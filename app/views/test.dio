@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="0zyiNsfSegdo7sNZ2nji" name="Page-1">
-        <mxGraphModel dx="248" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="832" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -10,25 +10,25 @@
                 <mxCell id="3" value="users" style="shape=table;startSize=30;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="20" y="20" width="180" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="ID (PK)&#xa;nickname&#xa;email (unique)&#xa;encrypted_password&#xa;first_name&#xa;last_name&#xa;first_name_kana&#xa;last_name_kanabirth_date" style="text;rounded=1;" vertex="1" parent="3">
+                <mxCell id="4" value="&#xa;nickname&#xa;email (unique)&#xa;encrypted_password&#xa;first_name&#xa;last_name&#xa;first_name_kana&#xa;last_name_kanabirth_date" style="text;rounded=1;" vertex="1" parent="3">
                     <mxGeometry x="10" y="40" width="160" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="items" style="shape=table;startSize=30;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="20" y="320" width="180" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="ID (PK)&#xa;name&#xa;description&#xa;price&#xa;category_id&#xa;condition_id&#xa;shipping_fee_id&#xa;prefecture_id&#xa;shipping_time_id&#xa;user_id (FK)" style="text;rounded=1;" vertex="1" parent="5">
+                <mxCell id="6" value="&#xa;name&#xa;description&#xa;price&#xa;category_id&#xa;condition_id&#xa;shipping_fee_id&#xa;prefecture_id&#xa;shipping_time_id&#xa;user_id (FK)" style="text;rounded=1;" vertex="1" parent="5">
                     <mxGeometry x="10" y="40" width="160" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="purchase_records" style="shape=table;startSize=30;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="410" y="30" width="180" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="ID (PK)&#xa;user_id (FK)&#xa;item_id (FK)" style="text;rounded=1;" vertex="1" parent="7">
+                <mxCell id="8" value="&#xa;user (FK)&#xa;item (FK)" style="text;rounded=1;" vertex="1" parent="7">
                     <mxGeometry x="10" y="40" width="160" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="shipping_addresses" style="shape=table;startSize=30;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="400" y="320" width="200" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="ID (PK)&#xa;postal_code&#xa;prefecture&#xa;city&#xa;address&#xa;building&#xa;phone_number&#xa;purchase_record_id (FK)" style="text;rounded=1;" vertex="1" parent="9">
+                <mxCell id="10" value="&#xa;postal_code&#xa;prefecture_id&#xa;city&#xa;address&#xa;building&#xa;phone_number&#xa;purchase_record_id (FK)" style="text;rounded=1;" vertex="1" parent="9">
                     <mxGeometry x="10" y="40" width="180" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" style="edgeStyle=elbowEdgeStyle;endArrow=ERoneToMany;endFill=0;targetPerimeterSpacing=5;" edge="1" parent="1">
