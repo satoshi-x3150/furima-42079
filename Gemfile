@@ -76,3 +76,12 @@ group :production do
 end
 
 gem 'devise'
+
+# Gemfile
+
+group :development, :test do
+  gem 'rspec-rails'         # RSpec 本体
+  gem 'factory_bot_rails'    # テストデータを簡単に作成する
+  gem 'faker'                # ダミーデータ生成用 (名前やメールアドレスなど)
+end
+
