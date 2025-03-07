@@ -11,6 +11,15 @@
   </head>
 
   <body>
+        <% if notice.present? %>
+      <p class="notice"><%= notice %></p> 
+      <%# 成功時のメッセージ %>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+      <%# 失敗時のメッセージ %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
