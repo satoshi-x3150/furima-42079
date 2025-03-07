@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   # アプリケーション全体に対して基本認証を適用するためのフィルタ
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :basic_auth,  unless: :devise_controller?
-
+  
   # ストロングパラメーターの設定
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [
