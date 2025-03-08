@@ -85,3 +85,4 @@ group :development, :test do
   gem 'faker'                # ダミーデータ生成用 (名前やメールアドレスなど)
 end
 
+gem 'active_hash'
