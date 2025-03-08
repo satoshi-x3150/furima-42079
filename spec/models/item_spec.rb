@@ -13,6 +13,19 @@ RSpec.describe Item, type: :model do
     end
 
     context '商品出品ができない場合' do
+
+      it '画像が無いと出品できない' do
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
+
+      it 'ユーザーが紐づいていないと出品できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User must exist")
+      end
+
       it '商品名が空だと出品できない' do
         @item.name = ''
         @item.valid?
@@ -31,7 +44,6 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Category を選択してください")
       end
       
-
       it '商品の状態が未選択（id:1）だと出品できない' do
         @item.condition_id = 1
         @item.valid?
