@@ -19,9 +19,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-    @item = Item.find(params[:id])
-  end
+  # def show
+  #   @item = Item.find(params[:id])
+  # end
 
   private
 
@@ -32,5 +32,4 @@ class ItemsController < ApplicationController
       :prefecture_id, :shipping_time_id
     ).merge(user_id: current_user.id)
   end
-
 end

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    name { "テスト商品" }
-    description { "これはテスト用の商品です。" }
+    name { 'テスト商品' }
+    description { 'これはテスト用の商品です。' }
     price { 1000 }
     category_id { 2 } # 1以外（バリデーションで「---」は1となっているため）
     condition_id { 2 }

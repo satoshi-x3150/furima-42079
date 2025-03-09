@@ -15,15 +15,15 @@ class Item < ApplicationRecord
 
   # 価格のバリデーション
   validates :price, presence: true,
-                    numericality: { 
-                      only_integer: true, 
-                      greater_than_or_equal_to: 300, 
-                      less_than_or_equal_to: 9_999_999, 
-                      message: "は300〜9,999,999円で入力してください" 
+                    numericality: {
+                      only_integer: true,
+                      greater_than_or_equal_to: 300,
+                      less_than_or_equal_to: 9_999_999,
+                      message: 'は300〜9,999,999円で入力してください'
                     }
 
   # ActiveHash を使ったプルダウンのバリデーション
-  with_options numericality: { other_than: 1, message: "を選択してください" } do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :category_id
     validates :condition_id
     validates :shipping_fee_id
