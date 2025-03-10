@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to item_path(@item),notice: '商品情報を更新しました'
+      redirect_to item_path(@item), notice: '商品情報を更新しました'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -52,15 +52,15 @@ class ItemsController < ApplicationController
   # def move_to_index
   #   # ログインしているユーザーが商品出品者でない場合、トップページへリダイレクト
   #   unless current_user == @item.user
-  #     redirect_to root_path 
+  #     redirect_to root_path
   #   end
   # end
   def move_to_index
-    unless current_user == @item.user
-      Rails.logger.info "リダイレクトしました: 出品者ではないユーザーがアクセスしました。"
-      redirect_to root_path
+    if current_user == @item.user
+      Rails.logger.info 'アクセス許可: 出品者がアクセスしました。'
     else
-      Rails.logger.info "アクセス許可: 出品者がアクセスしました。"
+      Rails.logger.info 'リダイレクトしました: 出品者ではないユーザーがアクセスしました。'
+      redirect_to root_path
     end
   end
 end
