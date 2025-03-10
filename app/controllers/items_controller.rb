@@ -56,10 +56,7 @@ class ItemsController < ApplicationController
   #   end
   # end
   def move_to_index
-    if current_user == @item.user
-      Rails.logger.info 'アクセス許可: 出品者がアクセスしました。'
-    else
-      Rails.logger.info 'リダイレクトしました: 出品者ではないユーザーがアクセスしました。'
+    if current_user != @item.user
       redirect_to root_path
     end
   end
