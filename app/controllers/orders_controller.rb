@@ -6,6 +6,5 @@ class OrdersController < ApplicationController
   end
 
   def create
-    
   end
 end
