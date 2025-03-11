@@ -17,7 +17,7 @@ class PurchaseForm
   # 保存処理
   def save
     # 購入情報を保存し、変数 purchase に代入する
-    purchase = Purchase.create(item_id: item_id, user_id: user_id)
+    purchase_record = PurchaseRecord.create(item_id: item_id, user_id: user_id)
     
     # 発送先情報を保存する
     ShippingAddress.create(
@@ -27,7 +27,7 @@ class PurchaseForm
       address: address,
       building_name: building_name,
       phone_number: phone_number,
-      purchase_id: purchase.id
+      purchase_record_id: purchase_record.id
     )
   end
 end
