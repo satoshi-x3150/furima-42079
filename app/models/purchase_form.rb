@@ -4,8 +4,8 @@ class PurchaseForm
 
   # バリデーション
   with_options presence: true do
-    validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/, message: "はハイフンを含んだ正しい形式で入力してください" }
-    validates :prefecture_id, numericality: { other_than: 1, message: "を選択してください" }
+    validates :postal_code, presence: true, format: { with: /\A\d{3}-\d{4}\z/, message: "はハイフンを含んだ正しい形式で入力してください" }
+    validates :prefecture_id,  presence: true, numericality: { other_than: 1, message: "を選択してください" }
     validates :city
     validates :address
     validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "は10桁または11桁の数字を入力してください" }
