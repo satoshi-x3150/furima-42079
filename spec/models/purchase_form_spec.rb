@@ -4,7 +4,7 @@ RSpec.describe PurchaseForm, type: :model do
   before do
     @user = FactoryBot.create(:user)
     @item = FactoryBot.create(:item, user: @user)
-    @purchase_form = FactoryBot.build(:purchase_form, user_id: @user.id, item_id: @item.id) 
+    @purchase_form = FactoryBot.build(:purchase_form, user_id: @user.id, item_id: @item.id)
   end
 
   describe '購入情報の保存' do
@@ -29,13 +29,13 @@ RSpec.describe PurchaseForm, type: :model do
       it '都道府県が空では購入できない' do
         @purchase_form.prefecture_id = nil
         @purchase_form.valid?
-        expect(@purchase_form.errors.full_messages).to include("Prefecture を選択してください")
+        expect(@purchase_form.errors.full_messages).to include('Prefecture を選択してください')
       end
 
       it '都道府県が1では購入できない' do
         @purchase_form.prefecture_id = 1
         @purchase_form.valid?
-        expect(@purchase_form.errors.full_messages).to include("Prefecture を選択してください")
+        expect(@purchase_form.errors.full_messages).to include('Prefecture を選択してください')
       end
 
       it '市区町村が空では購入できない' do
@@ -59,19 +59,19 @@ RSpec.describe PurchaseForm, type: :model do
       it '電話番号が9桁以下では購入できない' do
         @purchase_form.phone_number = '090123456'
         @purchase_form.valid?
-        expect(@purchase_form.errors.full_messages).to include("Phone number は10桁または11桁の数字を入力してください")
+        expect(@purchase_form.errors.full_messages).to include('Phone number は10桁または11桁の数字を入力してください')
       end
 
       it '電話番号が12桁以上では購入できない' do
         @purchase_form.phone_number = '090123456789'
         @purchase_form.valid?
-        expect(@purchase_form.errors.full_messages).to include("Phone number は10桁または11桁の数字を入力してください")
+        expect(@purchase_form.errors.full_messages).to include('Phone number は10桁または11桁の数字を入力してください')
       end
 
       it '電話番号に数字以外が含まれていると購入できない' do
         @purchase_form.phone_number = '090-1234-5678'
         @purchase_form.valid?
-        expect(@purchase_form.errors.full_messages).to include("Phone number は10桁または11桁の数字を入力してください")
+        expect(@purchase_form.errors.full_messages).to include('Phone number は10桁または11桁の数字を入力してください')
       end
 
       it 'user_idが空では購入できない' do

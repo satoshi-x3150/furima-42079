@@ -7,6 +7,5 @@ FactoryBot.define do
     building_name { '柳ビル103' } # 建物名は空でも良い
     phone_number  { '09012345678' } # 10桁 or 11桁の半角数字
     token         { 'tok_abcdefghijk00000000000000000' } # ダミーのトークン
-
   end
 end

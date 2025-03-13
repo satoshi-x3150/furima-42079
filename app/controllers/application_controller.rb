@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  
   # アプリケーション全体に対して基本認証を適用するためのフィルタ
   before_action :configure_permitted_parameters, if: :devise_controller?
 

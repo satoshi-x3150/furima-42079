@@ -38,10 +38,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user == @item.user
-      @item.destroy
-    end
-    redirect_to root_path    
+    @item.destroy if current_user == @item.user
+    redirect_to root_path
   end
 
   private
@@ -65,14 +63,14 @@ class ItemsController < ApplicationController
   #   end
   # end
   def move_to_index
-    if current_user != @item.user
-      redirect_to root_path
-    end
+    return unless current_user != @item.user
+
+    redirect_to root_path
   end
 
   def redirect_if_sold_out
-    if @item.purchase_record.present?
-      redirect_to root_path
-    end
+    return unless @item.purchase_record.present?
+
+    redirect_to root_path
   end
 end
