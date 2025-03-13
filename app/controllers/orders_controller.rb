@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    binding.pry 
     @purchase_form = PurchaseForm.new(purchase_params)
   
     if @purchase_form.valid?
@@ -27,6 +28,6 @@ class OrdersController < ApplicationController
     params.require(:purchase_form).permit(
       :postal_code, :prefecture_id, :city, :address, 
       :building_name, :phone_number
-    ).merge(user_id: current_user.id, item_id: params[:item_id])
+    ).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 end
