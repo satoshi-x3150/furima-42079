@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item 
+  before_action :redirect_if_sold_out  # 売却済みならトップページにリダイレクト
+  before_action :redirect_if_seller # 出品者が購入しようとしたらリダイレクト
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
@@ -24,6 +26,14 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])  # item_id を取得
+  end
+
+  def redirect_if_sold_out
+    redirect_to root_path if @item.purchase_record.present?
+  end
+
+  def redirect_if_seller
+    redirect_to root_path if current_user == @item.user
   end
 
   def purchase_params
