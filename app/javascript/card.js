@@ -1,6 +1,7 @@
 const pay = () => {
   // PAY.JPの公開鍵（適宜変更）
-  const payjp = Payjp('pk_test_7917579387bf4f10f5aa5d67'); // PAY.JPテスト公開鍵
+  const publicKey = gon.public_key
+  const payjp = Payjp(publicKey); // PAY.JPテスト公開鍵
   const elements = payjp.elements();
 
   // 各入力フィールドの要素を作成
@@ -35,3 +36,4 @@ const pay = () => {
 };
 
 window.addEventListener("turbo:load", pay);
+window.addEventListener("turbo:render", pay);

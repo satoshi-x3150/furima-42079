@@ -29,5 +29,8 @@ class PurchaseForm
       phone_number: phone_number,
       purchase_record_id: purchase_record.id
     )
+
+    
   end
+
 end

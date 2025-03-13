@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.includes(:purchase_record).find(params[:id])
   end
 
   def edit
