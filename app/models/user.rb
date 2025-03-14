@@ -14,4 +14,8 @@ class User < ApplicationRecord
 
   # パスワードのバリデーション（Deviseのデフォルトに追加）
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: '半角英数字混合で入力してください' }
+
+  # アソシエーションの追記
+  has_many :items
+  has_many :purchase_records
 end

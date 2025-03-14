@@ -2,6 +2,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  # 購入記録とのアソシエーション,1つの商品は1回しか購入されない
+  has_one :purchase_record
+
   # ActiveHash のアソシエーション設定
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category

@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :redirect_if_sold_out, only: [:edit, :update]
   # before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -22,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.includes(:purchase_record).find(params[:id])
   end
 
   def edit
@@ -36,10 +38,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user == @item.user
-      @item.destroy
-    end
-    redirect_to root_path    
+    @item.destroy if current_user == @item.user
+    redirect_to root_path
   end
 
   private
@@ -63,8 +63,14 @@ class ItemsController < ApplicationController
   #   end
   # end
   def move_to_index
-    if current_user != @item.user
-      redirect_to root_path
-    end
+    return unless current_user != @item.user
+
+    redirect_to root_path
+  end
+
+  def redirect_if_sold_out
+    return unless @item.purchase_record.present?
+
+    redirect_to root_path
   end
 end
