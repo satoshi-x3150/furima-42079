@@ -26,6 +26,12 @@ RSpec.describe PurchaseForm, type: :model do
         expect(@purchase_form.errors.full_messages).to include("Postal code can't be blank")
       end
 
+      it '郵便番号にハイフンが含まれていない場合は購入できない' do
+        @purchase_form.postal_code = '1234567' # ハイフンなし
+        @purchase_form.valid?
+        expect(@purchase_form.errors.full_messages).to include('Postal code はハイフンを含んだ正しい形式で入力してください')
+      end
+
       it '都道府県が空では購入できない' do
         @purchase_form.prefecture_id = nil
         @purchase_form.valid?

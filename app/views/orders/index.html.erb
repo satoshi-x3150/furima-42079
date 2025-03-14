@@ -7,10 +7,8 @@
       購入内容の確認
     </h1>
 
-    <%= render "shared/error_messages", model: @purchase_form %>
-
     <%= form_with model: @purchase_form, url: item_orders_path(@item), id: 'charge-form', class: 'transaction-form-wrap', local: true do |f| %>
-    
+    <%= render "shared/error_messages", model: @purchase_form %>
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
       <% if @item.image.attached? %>
