@@ -22,6 +22,6 @@ production:
   <<: *default
   adapter: mysql2
   database: furima-42079_production
-  username: ec2-user
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
